@@ -1,0 +1,20 @@
+<h1><%= @item.name %></h1>
+<ul>
+<li><b>Name: </b><span><%= @item.name %></span><br></li>
+<li><b>Description: </b><span><%= @item.description %></span><br></li>
+<li><b>Manufacturer: </b><span><%= @item.manufacturer %></span><br></li>
+<li><b>Quantity: </b><span><%= @item.qty %></span><br></li>
+<li><b>Price per Unit: </b><span>$<%= @item.price.to_s %></span><br></li>
+</ul>
+
+<br>
+<br>
+<br>
+<ul>
+<li><%= link_to "Edit Inventory Item", edit_item_path(@item) %></li>
+<li><%= link_to "Delete Inventory Item", item_path(@item), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+<li><%= link_to "Back to Index", root_path %></li>
+</ul>
