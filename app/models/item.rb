@@ -6,5 +6,5 @@ class Item < ApplicationRecord
   validates :manufacturer, presence: true
   validates :qty, presence: true, comparison: { greater_than: 0 }
   validates :price, presence: true, comparison: { greater_than: 0 },
-                    format: { with: /\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})/, message: 'must be a valid price format' }
+                    format: { with: /\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})/, message: 'must be a valid price format'}
 end
