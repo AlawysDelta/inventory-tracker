@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ItemsController < ApplicationController
   def index
     @items = Item.all
@@ -41,9 +43,10 @@ class ItemsController < ApplicationController
 
     redirect_to root_path, status: :see_other
   end
-  
+
   private
-    def item_params
-      params.require(:item).permit(:name, :description, :manufacturer, :qty, :price)
-    end
+
+  def item_params
+    params.require(:item).permit(:name, :description, :manufacturer, :qty, :price)
+  end
 end
