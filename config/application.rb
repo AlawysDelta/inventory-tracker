@@ -18,5 +18,8 @@ module InventoryTracker
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.action_dispatch.default_headers = {
+    'X-Frame-Options' => 'ALLOWFROM replit.com'
+  }
   end
 end
