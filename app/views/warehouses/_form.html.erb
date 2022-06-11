@@ -1,0 +1,55 @@
+<%= form_with model: @warehouse do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% @warehouse.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+  </div>
+
+  <div>
+    <%= form.label :country %><br>
+    <%= form.text_field :country %>
+    <% @warehouse.errors.full_messages_for(:country).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :state %><br>
+    <%= form.text_field :state %>
+    <% @warehouse.errors.full_messages_for(:state).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :city %><br>
+    <%= form.text_field :city %>
+    <% @warehouse.errors.full_messages_for(:city).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :address %><br>
+    <%= form.text_field :address %>
+    <% @warehouse.errors.full_messages_for(:address).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+  <div>
+    <%= form.label :postcode %><br>
+    <%= form.text_field :postcode %>
+    <% @warehouse.errors.full_messages_for(:postcode).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+  </div>
+  <br>
+  <br>
+  <div>
+    <%= form.button %>
+  </div>
+<% end %>

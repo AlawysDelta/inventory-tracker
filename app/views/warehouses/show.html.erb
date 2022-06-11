@@ -1,0 +1,27 @@
+<h1><%= @warehouse.name %></h1>
+<ul>
+<li><b>Name: </b><span><%= @warehouse.name %></span><br></li>
+<li><b>Country: </b><span><%= @warehouse.country %></span><br></li>
+<li><b>State: </b><span><%= @warehouse.state %></span><br></li>
+<li><b>City: </b><span><%= @warehouse.city %></span><br></li>
+<li><b>Address: </b><span><%= @warehouse.address %></span><br></li>
+<li><b>Postcode: </b><span><%= @warehouse.postcode %></span><br></li>
+<li><b>Items in Warehouses:</b><br>
+        <ul>
+        <% @warehouse.items.each do |item| %>
+        <li>
+        <%= link_to item.name, item %>
+        </li>
+        <% end %>
+    </ul>
+</ul>
+
+<br>
+<ul>
+<li><%= link_to "Edit Warehouse", edit_warehouse_path(@warehouse) %></li>
+<li><%= link_to "Delete Warehouse", warehouse_path(@warehouse), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+<li><%= link_to "Back to Warehouses", warehouses_path %>
+</ul>

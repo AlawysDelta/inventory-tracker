@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ItemsController < ApplicationController
   def index
     @items = Item.all
@@ -7,6 +5,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @warehouses = Warehouse.joins(:items_warehouses).where(id: @item.id)
   end
 
   def new
@@ -47,6 +46,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :manufacturer, :qty, :price)
+    params.require(:item).permit(:name, :description, :manufacturer, :qty, :price, warehouse_ids: [])
   end
 end

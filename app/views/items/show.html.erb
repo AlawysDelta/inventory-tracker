@@ -5,10 +5,16 @@
 <li><b>Manufacturer: </b><span><%= @item.manufacturer %></span><br></li>
 <li><b>Quantity: </b><span><%= @item.qty %></span><br></li>
 <li><b>Price per Unit: </b><span>$<%= @item.price.to_s %></span><br></li>
+<li><b>Stocked in Warehouses:</b><br>
+        <ul>
+        <% @item.warehouses.each do |warehouse| %>
+        <li>
+        <%= link_to warehouse.name, warehouse %>
+        </li>
+        <% end %>
+    </ul>
 </ul>
 
-<br>
-<br>
 <br>
 <ul>
 <li><%= link_to "Edit Inventory Item", edit_item_path(@item) %></li>

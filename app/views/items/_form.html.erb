@@ -15,7 +15,7 @@
       <div><%= message %></div>
     <% end %>
   </div>
-
+  
   <div>
     <%= form.label :manufacturer %><br>
     <%= form.text_field :manufacturer %>
@@ -38,8 +38,11 @@
     <% @item.errors.full_messages_for(:price).each do |message| %>
       <div><%= message %></div>
     <% end %>
-
   </div>
+
+  <div>
+    <%= form.label 'Warehouse' %><br>
+    <%= form.collection_check_boxes :warehouse_ids, Warehouse.all, :id, :name, { hide_label: true } %>
   <br>
   <br>
   <div>
