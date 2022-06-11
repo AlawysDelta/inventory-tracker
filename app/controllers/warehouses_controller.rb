@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WarehousesController < ApplicationController
   def index
     @warehouses = Warehouse.all

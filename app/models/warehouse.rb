@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Warehouse < ApplicationRecord
   has_many :items_warehouses
   has_many :items, through: :items_warehouses
