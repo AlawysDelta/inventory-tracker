@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Inventory Tracker is a very simple inventory tracker web service written on Ruby on Rails 7.0, with basic CRUD functionality for management of inventory items and warehouses.
 
-Things you may want to cover:
+## Dependencies
+The only dependency for the project is:
+* Ruby >= 3.0.2<br><br>
+All the other dependencies will be solved by bundle through the project Gemfile, and before doing everything else you need to launch it:<br><br>
+```bash bundle install```
 
-* Ruby version
+## Database Inizialization
+Before running the web service, the database based on SQLite3 needs initialization, using the command:<br>
 
-* System dependencies
+```bash ruby bin/rails db:migrate```
 
-* Configuration
+## Deployment
+To deploy the web service, you simply need to launch the Rails WebServer, that will deploy everything for you:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash ruby bin/rails server```
